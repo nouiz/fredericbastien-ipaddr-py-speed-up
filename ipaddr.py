@@ -644,7 +644,7 @@ class _BaseNet(_IPAddrBase):
         else:
             # I use this syntax that is faster then calling
             # int(...)
-            return self._ip <= other._ip <= self.broadcast._ip
+            return int(self.network) <= other._ip <= self.broadcast._ip
 
     def overlaps(self, other):
         """Tell if self is partly contained in other."""
